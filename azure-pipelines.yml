@@ -27,11 +27,11 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: $(Build.ArtifactStagingDirectory)
-    artifactName: 'MyBuildOutputs'
+    artifactName: '_ParamaBiswas.AzurePipelineTest'
     
 - task: CopyPublishBuildArtifacts@1
   inputs:
     Contents: 'All'
-    ArtifactName: 'MyBuildOutputs'
+    ArtifactName: '_ParamaBiswas.AzurePipelineTest'
     ArtifactType: 'Container'
   
