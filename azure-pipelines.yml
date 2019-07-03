@@ -22,7 +22,16 @@ steps:
     command: 'publish'
     publishWebProjects: true
 
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: $(Build.ArtifactStagingDirectory)
-    artifactName: MyBuildOutputs
+    artifactName: 'MyBuildOutputs'
+    
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    Contents: 'All'
+    ArtifactName: 'MyBuildOutputs'
+    ArtifactType: 'Container'
+  
